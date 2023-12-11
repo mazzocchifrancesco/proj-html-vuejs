@@ -1,12 +1,17 @@
 <script>
-import AppComponent from "./components/AppComponent.vue"
+import PageMain from "./components/PageMain.vue"
+import PageHeader from "./components/PageHeader.vue"
+import PageFooter from "./components/PageFooter.vue"
 
-import axios from 'axios'; //importo Axios
+
+
 import { store } from "./store.js" //state management
 
 export default {
 	components: {
-		AppComponent
+		PageHeader,
+		PageMain,
+		PageFooter
 	},
 	data() {
 		return {
@@ -14,7 +19,6 @@ export default {
 		}
 	},
 	mounted() {
-		this.doThings();
 
 		// axios.get("indirizzo").then(risultato => {
 		// 	console.log(risultato);
@@ -23,18 +27,17 @@ export default {
 		// });
 	},
 	methods: {
-		doThings() {
-			console.log("App.vue does things");
-		}
+
 	}
 }
 </script>
 
 <template>
 	<main>
-		<AppComponent />
+		<PageHeader />
+		<PageMain />
+		<PageFooter />
 
-		<button class="btn btn-primary">Primary button</button>
 	</main>
 </template>
 
@@ -48,7 +51,4 @@ export default {
 // @use './styles/partials/variables' as *;
 
 // ...qui eventuale SCSS di App.vue
-main {
-	padding: 1rem;
-}
 </style>

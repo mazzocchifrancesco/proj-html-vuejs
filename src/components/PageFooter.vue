@@ -3,27 +3,23 @@ import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
 
 export default {
-    name: "AppComponent",
+    name: "PageFooter",
     data() {
         return {
             store
         }
     },
     methods: {
-        doThings() {
-            console.log("AppComponent does things");
-        }
     },
     mounted() {
         register(this); //per debuggare il componente da console
-        this.doThings();
     }
 }
 </script>
 
 <template>
     <div>
-        <h1>Sono un componente!</h1>
+        <h1>footer</h1>
     </div>
 </template>
 
