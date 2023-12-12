@@ -1,34 +1,17 @@
 <script>
 import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
+import CarouselBar from "./CarouselBar.vue"
 
 export default {
     name: "PageHeader",
+    components: {
+        CarouselBar
+    },
     data() {
         return {
             store,
-            news: [
-                {
-                    img: "healthy-foods-150x150.webp",
-                    text: "the best healthy foods",
-                    time: "17.39"
-                },
-                {
-                    img: "winter-150x150.webp",
-                    text: "the best winter outfits",
-                    time: "18.25"
-                },
-                {
-                    img: "rice-ball-150x150.webp",
-                    text: "hygenic recipe to prepare rice",
-                    time: "20.30"
-                },
-                {
-                    img: "src/assets/meal-time-150x150.webp",
-                    text: "the best time to have a meal",
-                    time: "22.18"
-                },
-            ]
+
         }
     },
     methods: {
@@ -46,8 +29,10 @@ export default {
         <div class="container d-flex">
             <div id="newsUpdate" class="text-uppercase bg-secondary fw-bold text-white px-3 d-flex align-items-center">news
                 updates</div>
-            <img id="mealHeader" src="../assets/meal-time-150x150.webp" alt="">
-            <div>CAROSELLONEEEEEEEEEEEEEE_____________________________________</div>
+
+            <!-- carosello testo news  -->
+            <CarouselBar />
+
             <div>icon container</div>
         </div>
     </div>
