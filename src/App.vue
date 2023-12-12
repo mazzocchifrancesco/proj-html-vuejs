@@ -15,7 +15,25 @@ export default {
 	},
 	data() {
 		return {
-			store
+			store,
+			footerLinks: [
+				{
+					title: "get started",
+					link: ["resources", "tutorials", "examples", "docs"]
+				},
+				{
+					title: "about",
+					link: ["stories", "community", "blog", "brand assets"]
+				},
+				{
+					title: "features",
+					link: ["overview", "design", "code", "collaborate"]
+				},
+				{
+					title: "quick links",
+					link: ["stories", "community", "blog", "assets"]
+				}
+			]
 		}
 	},
 	mounted() {
@@ -36,7 +54,7 @@ export default {
 	<main>
 		<PageHeader />
 		<PageMain />
-		<PageFooter />
+		<PageFooter :footerLinks="this.footerLinks" />
 
 	</main>
 </template>

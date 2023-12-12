@@ -23,12 +23,12 @@ export default {
 
 <template>
     <div class="container">
-        <div class="d-flex justify-content-between">
-            <div class="text-uppercase">lifestyle & stories</div>
-            <div>
-                <div class="btn">BOTTONE</div>
-                <div class="btn">BOTTONE</div>
-                <div class="btn">BOTTONE</div>
+        <div class="d-flex justify-content-between py-3">
+            <div class="text-uppercase fw-bold fs-4">lifestyle & stories</div>
+            <div class="d-flex gap-3">
+                <div class="btn">all</div>
+                <div class="btn">lifestyle</div>
+                <div class="btn">stories</div>
             </div>
         </div>
 
@@ -79,5 +79,16 @@ export default {
 
 .Smallcard {
     width: 50%;
+}
+
+.btn {
+    text-transform: uppercase;
+    background-color: $themeColorDark;
+    color: white;
+}
+
+.btn:hover {
+    background-color: $themeColorAccent;
+    color: white;
 }
 </style>

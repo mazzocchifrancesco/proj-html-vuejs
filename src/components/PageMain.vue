@@ -52,10 +52,8 @@ export default {
     </div>
 
     <!-- featured post -->
-    <div id="featPost" class="container ">
+    <div class="container ">
         <MainCarousel />
-
-
     </div>
 
     <!-- youtube player -->
@@ -73,13 +71,6 @@ export default {
 #mainAdv {
     background-color: $themeColorLightgrey;
 }
-
-#ytPlayer {
-    height: 20rem;
-    background-color: bisque;
-}
-
-
 
 // ...qui eventuale SCSS di AppComponent
 </style>

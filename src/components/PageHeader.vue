@@ -92,7 +92,6 @@ export default {
     background-color: $themeColorAccent;
 }
 
-#newsUpdate {}
 
 #mealHeader {
     height: 3rem;

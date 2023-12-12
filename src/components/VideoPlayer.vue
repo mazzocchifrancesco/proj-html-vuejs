@@ -24,8 +24,15 @@ export default {
     }
 }
 </script>
-<template></template>
+<template>
+    <div id="ytPlayer"></div>
+</template>
 <style scoped lang="scss">
 // importo variabili
 @use '../styles/partials/variables' as *;
+
+#ytPlayer {
+    height: 20rem;
+    background-color: bisque;
+}
 </style>
