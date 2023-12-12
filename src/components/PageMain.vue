@@ -4,6 +4,10 @@ import register from "../debug" //per debuggare il componente da console
 import MainShowcase from "./MainShowcase.vue";
 import MainLinks from "./MainLinks.vue";
 import MainCarousel from "./MainCarousel.vue";
+import VideoPlayer from "./VideoPlayer.vue";
+import MainTags from "./MainTags.vue";
+
+
 
 
 
@@ -14,14 +18,19 @@ export default {
             store
         };
     },
-    methods: {},
+    methods: {
+
+    },
     mounted() {
         register(this); //per debuggare il componente da console
     },
     components: {
         MainShowcase,
         MainLinks,
-        MainCarousel
+        MainCarousel,
+        VideoPlayer,
+        MainTags
+
 
     }
 }
@@ -51,18 +60,10 @@ export default {
 
     <!-- youtube player -->
 
-    <div id="ytPlayer" class="container"></div>
+    <VideoPlayer />
 
     <!-- tag Square -->
-    <div id="tagSquare" class="d-flex p-2 justify-content-between">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-    </div>
+    <MainTags />
 </template>
 
 <style scoped lang="scss">
@@ -78,11 +79,7 @@ export default {
     background-color: bisque;
 }
 
-#tagSquare div {
-    width: 16%;
-    aspect-ratio: 1;
-    background-color: aqua;
-}
+
 
 // ...qui eventuale SCSS di AppComponent
 </style>

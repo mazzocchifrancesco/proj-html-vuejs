@@ -74,5 +74,31 @@ export const store = reactive({
             author: "",
             text: ""
         }
+    ],
+    tagList: [
+        {
+            name: "fashion",
+            img: "anime-fashion.webp"
+        },
+        {
+            name: "culture",
+            img: "success-story.webp"
+        },
+        {
+            name: "food",
+            img: "healthy-foods.webp"
+        },
+        {
+            name: "lifestyle",
+            img: "visit-france.webp"
+        },
+        {
+            name: "stories",
+            img: "travel-alone.webp"
+        },
+        {
+            name: "travel",
+            img: "best-places.webp"
+        },
     ]
 });
