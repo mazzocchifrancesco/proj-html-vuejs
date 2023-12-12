@@ -3,6 +3,8 @@ import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
 import MainShowcase from "./MainShowcase.vue";
 import MainLinks from "./MainLinks.vue";
+import MainCarousel from "./MainCarousel.vue";
+
 
 
 export default {
@@ -18,7 +20,8 @@ export default {
     },
     components: {
         MainShowcase,
-        MainLinks
+        MainLinks,
+        MainCarousel
 
     }
 }
@@ -41,14 +44,8 @@ export default {
 
     <!-- featured post -->
     <div id="featPost" class="container ">
-        <p>featured post</p>
+        <MainCarousel />
 
-        <div id="featPostContainer" class="d-flex justify-content-between">
-
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
 
     </div>
 
@@ -74,12 +71,6 @@ export default {
 
 #mainAdv {
     background-color: $themeColorLightgrey;
-}
-
-#featPostContainer div {
-    height: 10rem;
-    width: 30%;
-    background-color: aquamarine;
 }
 
 #ytPlayer {
