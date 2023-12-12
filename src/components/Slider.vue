@@ -3,7 +3,7 @@ import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
 
 export default {
-    name: "CarouselBar",
+    name: "Slider",
     props: {
         news: Array,
     },
@@ -15,49 +15,58 @@ export default {
         }
     },
     methods: {
+        //manda avanti le slides / TODO blocca intervallo autoplay e riparte dopo 5 sec
         next(array) {
             if (this.counter < array.length - 1) { //-1 perchè l'incremento ovviamente avviene dopo il check
                 this.counter++
-                console.log(this.counter);
-
             }
             else {
                 this.counter = 0;
-                console.log(this.counter);
-
             };
+            console.log(this.counter);
+
         },
+        //manda indietro le slides
         prev(array) {
             if (this.counter > 0) {
                 this.counter--
-                console.log(this.counter);
 
             }
             else {
-                this.counter = array.length;
-                console.log(this.counter);
+                this.counter = array.length - 1;
 
             };
+            console.log(this.counter);
+
         },
+        //recupera dinamicamente le immagini
         getImage(img) {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
+        //TODO rendere + generico questo passaggio
+        autoplay() {
+            this.next(this.news)
+        }
     },
     mounted() {
         register(this); //per debuggare il componente da console
+
+        // autoplay slider / TODO check bug stress test
+        const intervallo = setInterval(this.autoplay, 5000);
+
     }
 }
 </script>
 
 <template>
-    <div id="contenitore" class="d-flex">
+    <div id="contenitore" class="d-flex text-white align-items-center gap-2">
         <img :src="getImage(this.news[counter].img)" alt="">
-        <p>{{ this.news[counter].time }}</p>
-        <p>{{ this.news[counter].text }}</p>
+        <div>{{ this.news[counter].time }}</div>
+        <div class="text-uppercase">{{ this.news[counter].text }}</div>
     </div>
-    <div>
-        <div class="btn" @click="next(this.news)">avanti</div>
-        <div class="btn" @click="next(this.news)">indietro</div>
+    <div class="d-flex align-items-center">
+        <font-awesome-icon class="btn text-white" @click="prev(this.news)" :icon="['fas', 'angle-left']" />
+        <font-awesome-icon class="btn text-white" @click="next(this.news)" :icon="['fas', 'angle-right']" />
     </div>
 </template>
 

@@ -1,12 +1,15 @@
 <script>
 import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
-import CarouselBar from "./CarouselBar.vue"
+import Slider from "./Slider.vue"
+import Navbar from "./Navbar.vue"
+
 
 export default {
     name: "PageHeader",
     components: {
-        CarouselBar
+        Slider,
+        Navbar
     },
     data() {
         return {
@@ -52,21 +55,27 @@ export default {
             <div id="newsUpdate" class="text-uppercase bg-secondary fw-bold text-white px-3 d-flex align-items-center">news
                 updates</div>
 
-            <!-- carosello testo news  -->
-            <CarouselBar :news="this.news" />
+            <!-- slider testo news  -->
+            <Slider :news="this.news" />
 
-            <div>icon container</div>
+            <!-- contenitore icone -->
+            <div id="iconContainer" class="d-flex align-items-center gap-2">
+                <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                <font-awesome-icon icon="fa-brands fa-twitter" />
+                <font-awesome-icon icon="fa-brands fa-instagram" />
+                <font-awesome-icon icon="fa-brands fa-youtube" />
+            </div>
         </div>
     </div>
     <!-- cotnenitore logo + banner  -->
-    <div class="container d-flex py-2 justify-content-between">
-        <img src="../assets/imgs/assets/anime-logo-300x89.webp" alt="">
+    <div class="container d-flex py-2 justify-content-between align-items-center">
+        <img id="logo" src="../assets/imgs/assets/anime-logo-300x89.webp" alt="">
         <img src="../assets/imgs/assets/header-banner.webp" class="rounded" alt="">
     </div>
+
     <!-- navbar links  -->
-    <nav class="container">
-        LINKSSS LINKSSS LINKSSS LINKSSS LINKSSS LINKSSS
-    </nav>
+    <Navbar />
+
     <!-- carosello header  -->
     <div id="carosello">
         CAROSELLONE
@@ -87,8 +96,20 @@ export default {
     height: 3rem;
 }
 
+#iconContainer * {
+    color: $themeColorAccent;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    aspect-ratio: 1;
+}
+
 #carosello {
     background-color: $themeColorLightgrey;
     height: 10rem;
+}
+
+#logo {
+    height: 4rem;
 }
 </style>
