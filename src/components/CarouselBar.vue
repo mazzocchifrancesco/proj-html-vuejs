@@ -4,6 +4,9 @@ import register from "../debug" //per debuggare il componente da console
 
 export default {
     name: "CarouselBar",
+    props: {
+        news: Array,
+    },
     data() {
         return {
             store,
@@ -48,13 +51,13 @@ export default {
 
 <template>
     <div id="contenitore" class="d-flex">
-        <img :src="getImage(store.news[counter].img)" alt="">
-        <p>{{ store.news[counter].time }}</p>
-        <p>{{ store.news[counter].text }}</p>
+        <img :src="getImage(this.news[counter].img)" alt="">
+        <p>{{ this.news[counter].time }}</p>
+        <p>{{ this.news[counter].text }}</p>
     </div>
     <div>
-        <div class="btn" @click="next(store.news)">avanti</div>
-        <div class="btn" @click="next(store.news)">indietro</div>
+        <div class="btn" @click="next(this.news)">avanti</div>
+        <div class="btn" @click="next(this.news)">indietro</div>
     </div>
 </template>
 
