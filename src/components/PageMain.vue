@@ -2,6 +2,8 @@
 import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
 import MainShowcase from "./MainShowcase.vue";
+import MainLinks from "./MainLinks.vue";
+
 
 export default {
     name: "PageMain",
@@ -14,7 +16,11 @@ export default {
     mounted() {
         register(this); //per debuggare il componente da console
     },
-    components: { MainShowcase }
+    components: {
+        MainShowcase,
+        MainLinks
+
+    }
 }
 </script>
 
@@ -22,24 +28,9 @@ export default {
     <!-- prima sezione links immagine -->
 
     <MainShowcase />
-    <!-- seconda sezione links immagine con selettori -->
-    <div class="container">
 
-        <div class="d-flex justify-content-between">
-            <p>lifestyle & stories</p>
-            <div>
-                <div class="btn">BOTTONE</div>
-                <div class="btn">BOTTONE</div>
-                <div class="btn">BOTTONE</div>
-            </div>
-        </div>
-        <div class="container">
-            <div id="imgBoxTwo" class="row">
-                <div class="col-8">aaaaaaaaaaaaaaaaaaaaa</div>
-                <div class="col-4">aaaaaaaaaaaaaaaaaaaaaa</div>
-            </div>
-        </div>
-    </div>
+    <!-- seconda sezione links immagine con selettori -->
+    <MainLinks />
 
     <!-- ADV  -->
     <div id="mainAdv" class="py-4">
@@ -80,14 +71,6 @@ export default {
 <style scoped lang="scss">
 // importo variabili
 @use '../styles/partials/variables' as *;
-
-
-
-
-#imgBoxTwo {
-    height: 20rem;
-    background-color: blue;
-}
 
 #mainAdv {
     background-color: $themeColorLightgrey;
