@@ -1,46 +1,27 @@
 <script>
 import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
+import MainShowcase from "./MainShowcase.vue";
 
 export default {
     name: "PageMain",
     data() {
         return {
             store
-        }
+        };
     },
-    methods: {
-    },
+    methods: {},
     mounted() {
         register(this); //per debuggare il componente da console
-    }
+    },
+    components: { MainShowcase }
 }
 </script>
 
 <template>
     <!-- prima sezione links immagine -->
-    <div id="" class="container">
-        <div class="row">
-            <!-- prima colonna -->
-            <div class="col-3">
-                <div class="temp">
-                </div>
-                <div class="temp">
-                </div>
-            </div>
-            <!-- seconda colonna  -->
-            <div class="col-6 temp">
-            </div>
-            <!-- terza colonna  -->
-            <div class="col-3">
-                <div class="temp">
-                </div>
-                <div class="temp">
-                </div>
-            </div>
-        </div>
-    </div>
 
+    <MainShowcase />
     <!-- seconda sezione links immagine con selettori -->
     <div class="container">
 
@@ -101,11 +82,7 @@ export default {
 @use '../styles/partials/variables' as *;
 
 
-.temp {
-    background-color: red;
-    aspect-ratio: 1 / 0.7;
-    margin-bottom: 0.5rem;
-}
+
 
 #imgBoxTwo {
     height: 20rem;

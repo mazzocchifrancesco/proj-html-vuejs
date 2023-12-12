@@ -1,19 +1,22 @@
 <script>
 import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
-import Slider from "./Slider.vue"
+import HeaderCarousel from "./HeaderCarousel.vue"
+import HeaderSlider from "./HeaderSlider.vue"
 import Navbar from "./Navbar.vue"
-
 
 export default {
     name: "PageHeader",
     components: {
-        Slider,
-        Navbar
+        HeaderCarousel,
+        HeaderSlider,
+        Navbar,
     },
     data() {
+
         return {
             store,
+
             news: [
                 {
                     img: "healthy-foods-150x150.webp",
@@ -35,7 +38,8 @@ export default {
                     text: "the best time to have a meal",
                     time: "22.18"
                 },
-            ]
+            ],
+
 
         }
     },
@@ -56,7 +60,7 @@ export default {
                 updates</div>
 
             <!-- slider testo news  -->
-            <Slider :news="this.news" />
+            <HeaderSlider :news="this.news" />
 
             <!-- contenitore icone -->
             <div id="iconContainer" class="d-flex align-items-center gap-2">
@@ -77,9 +81,7 @@ export default {
     <Navbar />
 
     <!-- carosello header  -->
-    <div id="carosello">
-        CAROSELLONE
-    </div>
+    <HeaderCarousel />
 </template>
 
 <style scoped lang="scss">
@@ -102,11 +104,6 @@ export default {
     border-radius: 50%;
     padding: 0.5rem;
     aspect-ratio: 1;
-}
-
-#carosello {
-    background-color: $themeColorLightgrey;
-    height: 10rem;
 }
 
 #logo {
