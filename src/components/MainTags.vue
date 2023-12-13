@@ -14,6 +14,7 @@ export default {
         return {
             store,
             totalTags: [],
+            counterOver: false,
 
 
         }
@@ -43,13 +44,17 @@ export default {
 </script>
 <template>
     <div id="tagSquare" class="d-flex p-2 justify-content-between ">
-        <div v-for="tag in store.tagList" class="d-flex position-relative tagContainer">
-            <img :src="getImage(tag.img)" alt="" class="h-100 w-100">
-            <div
-                class="tagBox position-absolute top-50 start-50 translate-middle text-white text-uppercase fw-bold fs-4 text-center">
-                <div>{{ tag.name }}</div>
-                <div class="hide">{{ this.countTags(tag.name) }}</div>
 
+        <!-- square tag box -->
+        <div v-for="tag in store.tagList" class="d-flex position-relative tagContainer">
+            <!-- sfondo  -->
+            <img :src="getImage(tag.img)" alt="" class="h-100 w-100">
+            <!-- nome + counter  -->
+            <div class="tagBox top-50 start-50 translate-middle">{{ tag.name }}</div>
+            <div class="hide tagBox start-50 translate-middle">{{ this.countTags(tag.name) }}</div>
+            <!-- sfondo rosso -->
+            <div class="colorHover h-100 w-100 position-absolute top-0 left-0">
+                <div></div>
             </div>
         </div>
 
@@ -72,10 +77,42 @@ img {
 }
 
 .hide {
-    display: none;
+    opacity: 0;
+    top: 65%;
 }
 
-.tagBox:hover>.hide {
-    display: block;
+.colorHover {
+    background-color: $themeColorAccent;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorHover div {
+    width: 80%;
+    height: 80%;
+    border: 1px solid white;
+}
+
+// TODO aggiugnere animazioni
+.tagBox {
+    z-index: 999;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+}
+
+// HOVER style 
+.tagContainer:hover>.hide {
+    opacity: 1;
+}
+
+.tagContainer:hover>.colorHover {
+    display: flex;
+    opacity: 0.5;
 }
 </style>

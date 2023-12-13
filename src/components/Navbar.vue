@@ -23,7 +23,6 @@ export default {
         getTagSelected(tag) {
 
             this.selectedArray = [];
-            clearTimeout(this.timer)
 
             store.articles.forEach((element, i) => {
                 if (element.tags.includes(tag)) {
@@ -32,13 +31,7 @@ export default {
             });
             this.activeBanner = true
         },
-        // ritarda scomparsa del banner
-        timeTrigger() {
-            this.timer = true;
-            setTimeout(() => {
-                this.activeBanner = false;
-            }, "1000");
-        }
+
     },
     mounted() {
         register(this); //per debuggare il componente da console
@@ -46,12 +39,15 @@ export default {
 }
 </script>
 <template>
+    <!-- navbar  -->
     <nav class="position-relative">
         <div class="container d-flex justify-content-between align-items-center py-2">
+            <!-- bottone per offcanvas  -->
             <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
                 aria-controls="offcanvasWithBothOptions"> <font-awesome-icon icon="fa-solid fa-bars" class="hover"
                     size='xl' />
             </button>
+            <!-- lista bottoni link nav  -->
             <div class="d-flex gap-5 text-uppercase">
                 <div class="hover selected">
                     <font-awesome-icon icon="fa-solid fa-home" />
@@ -61,13 +57,14 @@ export default {
                     <font-awesome-icon icon="fa-solid fa-user" />
                     about us
                 </div>
-                <div class="hover" @mouseenter="getTagSelected('lifestyle')" @mouseleave="timeTrigger()">
+                <!-- TODO il banner rimane aperto se ci vado sopra -->
+                <div class="hover" @mouseenter="getTagSelected('lifestyle')" @mouseleave="this.activeBanner = false;">
                     <font-awesome-icon icon="fa-solid fa-briefcase" />
                     lifestyle
                     <font-awesome-icon icon="fa-solid fa-angle-down" />
 
                 </div>
-                <div class="hover" @mouseenter="getTagSelected('stories')" @mouseleave="timeTrigger()">
+                <div class="hover" @mouseenter="getTagSelected('stories')" @mouseleave="this.activeBanner = false;">
                     <font-awesome-icon icon="fa-solid fa-book-open-reader" />
                     stories
                     <font-awesome-icon icon="fa-solid fa-angle-down" />
@@ -82,8 +79,11 @@ export default {
                     contact us
                 </div>
             </div>
+            <!-- bottone searchbar fullscreen -->
             <font-awesome-icon class="hover" icon="fa-solid fa-magnifying-glass" size='xl' />
         </div>
+
+        <!-- offcanvas -->
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
             aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
@@ -92,26 +92,29 @@ export default {
             </div>
             <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center ">
                 <img id="logo" src="../assets/imgs/assets/anime-logo-300x89.webp" alt="">
-                <p class="px-3 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis alias minus culpa
+                <p class="px-3 my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis alias minus culpa
                     aliquam maxime reiciendis rerum nulla, dolores hic voluptas.</p>
                 <div class="d-flex justify-content-between">
                     <img class="rounded" v-for="i in 3" :src="getImage(store.articles[i - 1].img)" alt="">
                 </div>
-                <div class="d-flex">
-                    <font-awesome-icon icon="fa-solid fa-clock" />
-                    <div>Sun - Sat : 9:00 AM - 18:00 PM</div>
-                </div>
+                <!-- contenitore info contatti -->
+                <div class="py-5 d-flex flex-column gap-2 fw-semibold">
+                    <div class="infoLine">
+                        <font-awesome-icon class="icon" icon="fa-solid fa-clock" />
+                        <div>Sun - Sat : 9:00 AM - 18:00 PM</div>
+                    </div>
 
-                <div class="d-flex">
-                    <font-awesome-icon icon="fa-solid fa-envelope" />
-                    <div>contact@domain.com</div>
-                </div>
-                <div class="d-flex">
-                    <font-awesome-icon icon="fa-solid fa-phone" />
-                    <div>(+82) 8123 456 789</div>
+                    <div class="infoLine">
+                        <font-awesome-icon class="icon" icon="fa-solid fa-envelope" />
+                        <div>contact@domain.com</div>
+                    </div>
+                    <div class="infoLine">
+                        <font-awesome-icon class="icon" icon="fa-solid fa-phone" />
+                        <div>(+82) 8123 456 789</div>
+                    </div>
                 </div>
                 <!-- contenitore icone -->
-                <div id="iconContainer" class="d-flex align-items-center gap-2">
+                <div id="iconContainer" class="d-flex align-items-center gap-2 ">
                     <font-awesome-icon icon="fa-brands fa-facebook-f" />
                     <font-awesome-icon icon="fa-brands fa-twitter" />
                     <font-awesome-icon icon="fa-brands fa-instagram" />
@@ -146,10 +149,21 @@ export default {
     z-index: 999;
 }
 
+.infoLine {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+.icon {
+    color: $themeColorAccent;
+}
+
 .cardBox {
     width: 23%;
 }
-
 
 nav {
     border: 1px solid $themeColorLightgrey;
@@ -158,10 +172,6 @@ nav {
 
 .selected {
     color: $themeColorAccent
-}
-
-.hover:hover {
-    color: $themeColorAccent;
 }
 
 #logo {
@@ -185,7 +195,24 @@ img {
     cursor: pointer;
 }
 
+// HOVER style 
 #iconContainer *:hover {
     background-color: $themeColorDark;
+}
+
+.hover:hover {
+    color: $themeColorAccent;
+}
+
+.infoLine:hover>div {
+    color: $themeColorAccent;
+}
+
+.infoLine:hover>.icon {
+    color: $themeColorDark;
+}
+
+.btn:hover {
+    background-color: white !important;
 }
 </style>

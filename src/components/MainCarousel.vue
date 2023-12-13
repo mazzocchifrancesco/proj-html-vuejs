@@ -62,7 +62,9 @@ export default {
         <div>
             <div class="fs-4 fw-bold py-3 mt-3">FEATURED POSTS</div>
         </div>
-        <div id="carosello">
+        <!-- contenitore slides -->
+        <div id="carosello" class="bg-white">
+            <!-- slides -->
             <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :navigation="true" :loop="true" :autoplay="{
                 delay: 6000,
                 disableOnInteraction: false,
@@ -132,5 +134,9 @@ export default {
     font-weight: 900;
     text-shadow: 0px 1px, 1px 0px, 1px 1px;
 
+}
+
+.btn:hover {
+    background-color: $themeColorDark !important;
 }
 </style>

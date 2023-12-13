@@ -28,23 +28,23 @@ export default {
         <div class="container">
             <div class="row text-white justify-content-between py-5">
                 <div class="col-2 d-flex flex-column" v-for="link in this.footerLinks">
-                    <div class="text-uppercase mb-2">{{ link.title }}</div>
-                    <div v-for="(element, i) in link.link" class="text-capitalize">
+                    <div class="text-uppercase mb-2 fw-bold">{{ link.title }}</div>
+                    <a v-for="(element, i) in link.link" class="text-capitalize text-white text-decoration-none">
                         {{ element }}
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-4">
-                    <div>SUBSCRIBE TO NEWSLETTER</div>
-                    <input type="text" class="w-100 rounded">
-                    <div class="btn">SUBSCRIBE</div>
+                    <div class="mb-2 fw-bold">SUBSCRIBE TO NEWSLETTER</div>
+                    <input type="text" placeholder="Email" class="w-100 rounded px-3">
+                    <div class="btn text-white mt-2 fw-bold">SUBSCRIBE</div>
                 </div>
             </div>
             <div class="row">
                 <hr class="col-12 text-white">
             </div>
             <div class="d-flex justify-content-between align-items-center text-white pb-3">
-                <img src="../assets/imgs/assets/anime-logo.webp" alt="">
+                <img src="../assets/imgs/assets/anime-whitelogo-300x89.png" alt="">
                 <div>&copy; Anime Tech, Theme by HasnainDEV</div>
             </div>
         </div>
@@ -60,8 +60,8 @@ footer {
 }
 
 img {
-    filter: invert(99%) sepia(15%) saturate(564%) hue-rotate(205deg) brightness(119%) contrast(100%);
-    width: 15rem;
+    color: white;
+    width: 230px;
 }
 
 hr {
@@ -78,6 +78,26 @@ hr {
     color: $themeColorDark;
 }
 
+a:hover {
+    color: $themeColorDark !important;
+}
+
+.btn {
+    background-color: $themeColorDark;
+    width: 16rem;
+}
+
+input {
+    width: 16rem !important;
+    height: 2.5rem;
+    border: none;
+}
+
+.btn:hover {
+    color: $themeColorAccent !important;
+    background-color: white !important;
+
+}
 
 // ...qui eventuale SCSS di AppComponent
 </style>

@@ -46,14 +46,20 @@ export default {
 
 <template>
     <div class="container my-5">
+
+        <!-- button select bar -->
         <div class="d-flex justify-content-between py-3">
+            <!-- title -->
             <div class="text-uppercase fw-bold fs-4">lifestyle & stories</div>
+            <!-- bottoni -->
             <div class="d-flex gap-3">
+                <!-- TODO bottone rimanse selezionato -->
                 <div class="btn" @click="getTagSelected('all')">all</div>
                 <div class="btn" @click="getTagSelected('lifestyle')">lifestyle</div>
                 <div class="btn" @click="getTagSelected('stories')">stories</div>
             </div>
         </div>
+        <!-- contenitore card -->
         <div id="contenitoreCard" class="container position-relative ">
 
             <!-- card che cicla -->
@@ -62,7 +68,7 @@ export default {
                 <img :src="getImage(this.selectedArray[i - 1].img)" alt="" class="w-100 h-100">
 
                 <!-- tags -->
-                <div class="tagCont top-0 start-50 translate-middle-x">
+                <div class="tagCont top-0 start-0  ms-3 mt-1">
                     <!-- elemento tag che cicla sul numero di tag nell'oggetto -->
                     <a v-for="element in this.selectedArray[i - 1].tags"
                         class="tag bg-white rounded px-2 mt-2 text-capitalize">
@@ -73,7 +79,7 @@ export default {
                 <div class="info position-absolute mb-2 text-capitalize">
                     <div class="d-flex align-content-baseline gap-2">
                         <font-awesome-icon icon="fa-solid fa-user" class="" />
-                        <div>{{ this.selectedArray[i - 1].author }}</div>
+                        <div class="mb-2">{{ this.selectedArray[i - 1].author }}</div>
                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
                         <div>{{ this.selectedArray[i - 1].date }}</div>
                     </div>
@@ -107,7 +113,7 @@ img:hover {
 }
 
 .btn:hover {
-    background-color: $themeColorAccent;
+    background-color: $themeColorAccent !important;
     color: white;
 }
 
@@ -147,7 +153,7 @@ img:hover {
 
 .card:nth-child(2) .info {
     top: 10%;
-    right: -85%;
+    right: -230px;
     padding: 1.5rem;
     width: 15rem;
     color: $themeColorDark;
@@ -164,7 +170,7 @@ img:hover {
 
 .card:nth-child(3) .info {
     top: 10%;
-    right: -85%;
+    right: -230px;
     padding: 1.5rem;
     width: 15rem;
     color: $themeColorDark;
@@ -179,9 +185,10 @@ img:hover {
 
 .card:nth-child(4) .info {
     top: 10%;
-    right: -85%;
+    right: -230px;
     padding: 1.5rem;
     width: 15rem;
     color: $themeColorDark;
     font-size: 0.8rem;
-}</style>
+}
+</style>

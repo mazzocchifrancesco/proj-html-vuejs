@@ -79,6 +79,7 @@ img {
 
 .btn:hover {
     color: $themeColorDark !important;
+    background-color: $themeColorAccent !important;
 }
 
 

@@ -4,7 +4,7 @@ export const store = reactive({
     articles: [
         {
             title: "the best success stories",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["culture", "stories"],
             img: "success-story.webp",
             author: "ugo",
@@ -12,15 +12,15 @@ export const store = reactive({
         },
         {
             title: "traveling alone is awesome",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["stories", "travel"],
             img: "travel-alone.webp",
-            author: "gianni",
+            author: "franz",
             text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "place for a road trip",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["lifestyle", "stories", "travel"],
             img: "best-places.webp",
             author: "pippo",
@@ -28,7 +28,7 @@ export const store = reactive({
         },
         {
             title: "music the love of my life",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["culture", "lifestyle"],
             img: "music-love.webp",
             author: "gino",
@@ -36,7 +36,7 @@ export const store = reactive({
         },
         {
             title: "fashion trend now a days",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["fashion", "lifestyle"],
             img: "anime-fashion.webp",
             author: "jack",
@@ -44,7 +44,7 @@ export const store = reactive({
         },
         {
             title: "the best winter outfit",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["fashion"],
             img: "winter.webp",
             author: "john",
@@ -52,7 +52,7 @@ export const store = reactive({
         },
         {
             title: "beginner photographer's mistake",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["fashion"],
             img: "photographers-mistakes.webp",
             author: "al",
@@ -60,7 +60,7 @@ export const store = reactive({
         },
         {
             title: "live ideas you might be anime",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["culture", "stories"],
             img: "ideas-anime.webp",
             author: "pdor",
@@ -68,7 +68,7 @@ export const store = reactive({
         },
         {
             title: "reason to visit france",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["lifestyle", "travel"],
             img: "visit-france.webp",
             author: "furio",
@@ -76,7 +76,7 @@ export const store = reactive({
         },
         {
             title: "hygenic recipe to prepare rice",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["food"],
             img: "rice-ball.webp",
             author: "cesare",
@@ -84,7 +84,7 @@ export const store = reactive({
         },
         {
             title: "the best time to have a meal",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["food"],
             img: "meal2.jpg",
             author: "sertorio",
@@ -92,7 +92,7 @@ export const store = reactive({
         },
         {
             title: "the beast healty food",
-            date: "December 13, 2023",
+            date: "may 13, 2023",
             tags: ["food"],
             img: "healthy-foods.webp",
             author: "tullio",

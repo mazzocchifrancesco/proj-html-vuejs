@@ -32,9 +32,10 @@ export default {
                 <a v-for="element in store.articles[i - 1].tags" class="tag bg-white rounded px-2 mt-2 text-capitalize">
                     {{ element }}</a>
             </div>
-            <div class="position-absolute bottom-0 start-50 translate-middle-x text-white mb-2 text-capitalize">
+            <div
+                class="position-absolute bottom-0 start-50 translate-middle-x text-white mb-2 text-capitalize d-flex flex-column align-items-center">
 
-                <div class="d-flex align-content-baseline gap-2">
+                <div class="infoContainer d-flex  justify-content-center gap-2">
                     <font-awesome-icon icon="fa-solid fa-user" class="" />
                     <div>{{ store.articles[i - 1].author }}</div>
                     <font-awesome-icon icon="fa-solid fa-calendar-days" />
@@ -51,11 +52,14 @@ export default {
 // importo variabili
 @use '../styles/partials/variables' as *;
 
+.infoContainer {
+    width: 15rem;
+}
+
 img {
     border-radius: 5px;
     filter: brightness(0.6);
     object-fit: cover;
-
 }
 
 img:hover {
