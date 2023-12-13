@@ -10,12 +10,35 @@ export default {
 
         return {
             store,
+            activeBanner: false,
+            selectedArray: [],
+            timer: false
         }
     },
     methods: {
         getImage(img) {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
+        // crea un array con oggetti con tag della selezione
+        getTagSelected(tag) {
+
+            this.selectedArray = [];
+            clearTimeout(this.timer)
+
+            store.articles.forEach((element, i) => {
+                if (element.tags.includes(tag)) {
+                    this.selectedArray.push(element);
+                }
+            });
+            this.activeBanner = true
+        },
+        // ritarda scomparsa del banner
+        timeTrigger() {
+            this.timer = true;
+            setTimeout(() => {
+                this.activeBanner = false;
+            }, "1000");
+        }
     },
     mounted() {
         register(this); //per debuggare il componente da console
@@ -23,7 +46,7 @@ export default {
 }
 </script>
 <template>
-    <nav>
+    <nav class="position-relative">
         <div class="container d-flex justify-content-between align-items-center py-2">
             <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
                 aria-controls="offcanvasWithBothOptions"> <font-awesome-icon icon="fa-solid fa-bars" class="hover"
@@ -38,13 +61,13 @@ export default {
                     <font-awesome-icon icon="fa-solid fa-user" />
                     about us
                 </div>
-                <div class="hover">
+                <div class="hover" @mouseenter="getTagSelected('lifestyle')" @mouseleave="timeTrigger()">
                     <font-awesome-icon icon="fa-solid fa-briefcase" />
                     lifestyle
                     <font-awesome-icon icon="fa-solid fa-angle-down" />
 
                 </div>
-                <div class="hover">
+                <div class="hover" @mouseenter="getTagSelected('stories')" @mouseleave="timeTrigger()">
                     <font-awesome-icon icon="fa-solid fa-book-open-reader" />
                     stories
                     <font-awesome-icon icon="fa-solid fa-angle-down" />
@@ -96,11 +119,37 @@ export default {
                 </div>
             </div>
         </div>
+
+        <!-- banner popup -->
+        <div class="linkBanner" v-if="this.activeBanner" @mouseenter="this.activeBanner = true" @mouseleave="timeTrigger()">
+            <div class="container d-flex justify-content-between py-3">
+                <div v-for="i in 4" class="bg-white cardBox rounded">
+                    <img :src="getImage(selectedArray[i - 1].img)" alt="" class="w-100 rounded">
+                    <div class="text-center fw-semibold py-2">{{ selectedArray[i - 1].title }}</div>
+                </div>
+            </div>
+        </div>
     </nav>
 </template>
 <style scoped lang="scss">
 // importo variabili
 @use '../styles/partials/variables' as *;
+
+// banner popup
+.linkBanner {
+    width: 100%;
+    background-color: $themeColorLightgrey;
+    position: absolute;
+    // TODO mettere altezza fissa navbar in variabile
+    top: 57px;
+    left: 0;
+    z-index: 999;
+}
+
+.cardBox {
+    width: 23%;
+}
+
 
 nav {
     border: 1px solid $themeColorLightgrey;
