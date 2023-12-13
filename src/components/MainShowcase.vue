@@ -23,28 +23,29 @@ export default {
 
 <template>
     <!-- TODO posso popolarlo con un v-for per le prime X posizioni? -->
+    <!-- quale logica popola con gli elementi questa vetrina -->
     <div id="" class="container">
         <div class="row">
             <!-- prima colonna -->
             <div class="col-3 d-flex flex-column justify-content-between">
-                <div class="temp">
-                    <img :src="getImage(store.articles[0].img)" alt="" class="w-100">
+                <div class="card">
+                    <img :src="getImage(store.articles[0].img)" alt="">
                 </div>
-                <div class="temp">
-                    <img :src="getImage(store.articles[1].img)" alt="" class="w-100">
+                <div class="card">
+                    <img :src="getImage(store.articles[1].img)" alt="">
                 </div>
             </div>
             <!-- seconda colonna  -->
-            <div class="col-6 temp">
-                <img :src="getImage(store.articles[2].img)" alt="" class="w-100">
+            <div class="col-6 card">
+                <img :src="getImage(store.articles[2].img)" alt="">
             </div>
             <!-- terza colonna  -->
             <div class="col-3 d-flex flex-column justify-content-between">
-                <div class="temp">
-                    <img :src="getImage(store.articles[3].img)" alt="" class="w-100">
+                <div class="card">
+                    <img :src="getImage(store.articles[3].img)" alt="">
                 </div>
-                <div class="temp">
-                    <img :src="getImage(store.articles[4].img)" alt="" class="w-100">
+                <div class="card">
+                    <img :src="getImage(store.articles[4].img)" alt="">
                 </div>
             </div>
         </div>
@@ -57,5 +58,13 @@ export default {
 
 img {
     border-radius: 5px;
+}
+
+.card {
+    border-radius: 5px;
+    background-color: $themeColorLightgrey;
+    // FIX magheggio per nascondere che l'immagine non riepmpie il div 
+    border-color: $themeColorLightgrey;
+
 }
 </style>

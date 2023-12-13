@@ -65,9 +65,17 @@ export default {
                 disableOnInteraction: false,
             }" class="mySwiper">
             <swiper-slide v-for="articles in store.articles">
-                <div id="slide" class="rounded">
+                <div id="slide" class="rounded position-relative">
                     <img class="w-100 rounded-top" :src="getImage(articles.img)" alt="">
-                    <div class="text-capitalize fw-bold text-center">{{ articles.title }}</div>
+                    <div class="py-3 text-center">
+                        <div class="text-capitalize fw-bold ">{{ articles.title }}</div>
+                        <div>{{ articles.date }}</div>
+                    </div>
+                    <div class="position-absolute top-0 start-50 translate-middle-x d-flex gap-2">
+                        <div v-for="element in articles.tags" class="bg-white rounded px-2 mt-2 text-capitalize">
+                            {{ element
+                            }}</div>
+                    </div>
                 </div>
             </swiper-slide>
         </swiper>
@@ -106,7 +114,6 @@ export default {
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
-    display: flex;
 }
 
 .headerR::after,

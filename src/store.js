@@ -4,98 +4,98 @@ export const store = reactive({
     articles: [
         {
             title: "traveling alone is awesome",
-            date: "",
+            date: "December 13, 2023",
             tags: ["stories", "travel"],
             img: "travel-alone.webp",
-            author: "",
+            author: "gianni",
             text: ""
         },
         {
             title: "the best success stories",
-            date: "",
+            date: "December 13, 2023",
             tags: ["culture", "stories"],
             img: "success-story.webp",
-            author: "",
+            author: "ugo",
             text: ""
         },
         {
             title: "place for a road trip",
-            date: "",
+            date: "December 13, 2023",
             tags: ["lifestyle", "stories", "travel"],
             img: "best-places.webp",
-            author: "",
+            author: "pippo",
             text: ""
         },
         {
             title: "music the love of my life",
-            date: "",
+            date: "December 13, 2023",
             tags: ["culture", "lifestyle"],
             img: "music-love.webp",
-            author: "",
+            author: "gino",
             text: ""
         },
         {
             title: "fashion trend now a days",
-            date: "",
+            date: "December 13, 2023",
             tags: ["fashion", "lifestyle"],
             img: "anime-fashion.webp",
-            author: "",
+            author: "jack",
             text: ""
         },
         {
             title: "the best winter outfit",
-            date: "",
+            date: "December 13, 2023",
             tags: ["fashion"],
             img: "winter.webp",
-            author: "",
+            author: "john",
             text: ""
         },
         {
             title: "beginner photographer's mistake",
-            date: "",
+            date: "December 13, 2023",
             tags: ["fashion"],
             img: "photographers-mistakes.webp",
-            author: "",
+            author: "al",
             text: ""
         },
         {
             title: "live ideas you might be anime",
-            date: "",
+            date: "December 13, 2023",
             tags: ["culture", "stories"],
             img: "ideas-anime.webp",
-            author: "",
+            author: "pdor",
             text: ""
         },
         {
             title: "reason to visit france",
-            date: "",
+            date: "December 13, 2023",
             tags: ["lifestyle", "travel"],
             img: "visit-france.webp",
-            author: "",
+            author: "furio",
             text: ""
         },
         {
             title: "hygenic recipe to prepare rice",
-            date: "",
+            date: "December 13, 2023",
             tags: ["food"],
             img: "rice-ball.webp",
-            author: "",
+            author: "cesare",
             text: ""
         },
         {
             title: "the best time to have a meal",
-            date: "",
+            date: "December 13, 2023",
             tags: ["food"],
             img: "visit-france.webp",
-            author: "",
+            author: "sertorio",
             text: ""
         },
         {
             title: "the beast healty food",
-            date: "",
+            date: "December 13, 2023",
             tags: ["food"],
             img: "healthy-foods.webp",
-            author: "",
+            author: "tullio",
             text: ""
         }
     ],

@@ -37,31 +37,33 @@ export default {
 </script>
 
 <template>
-    <!-- prima sezione links immagine -->
+    <main>
+        <!-- prima sezione links immagine -->
 
-    <MainShowcase />
+        <MainShowcase />
 
-    <!-- seconda sezione links immagine con selettori -->
-    <MainLinks />
+        <!-- seconda sezione links immagine con selettori -->
+        <MainLinks />
 
-    <!-- ADV  -->
-    <div id="mainAdv" class="py-4">
-        <div class="container">
-            <img src="../assets/imgs/assets/page-banner-1-768x71.webp" class="w-100 rounded" alt="">
+        <!-- ADV  -->
+        <div id="mainAdv" class="py-4">
+            <div class="container">
+                <img src="../assets/imgs/assets/page-banner-1-768x71.webp" class="w-100 rounded" alt="">
+            </div>
         </div>
-    </div>
 
-    <!-- featured post -->
-    <div class="container ">
-        <MainCarousel />
-    </div>
+        <!-- featured post -->
+        <div class="container ">
+            <MainCarousel />
+        </div>
 
-    <!-- youtube player -->
+        <!-- youtube player -->
 
-    <VideoPlayer />
+        <VideoPlayer />
 
-    <!-- tag Square -->
-    <MainTags />
+        <!-- tag Square -->
+        <MainTags />
+    </main>
 </template>
 
 <style scoped lang="scss">
@@ -72,5 +74,8 @@ export default {
     background-color: $themeColorLightgrey;
 }
 
-// ...qui eventuale SCSS di AppComponent
-</style>
+main {
+    background-color: $themeColorLightgrey ;
+}
+
+// ...qui eventuale SCSS di AppComponent</style>
