@@ -7,6 +7,8 @@ export default {
     data() {
         return {
             store,
+            selectedArray: store.articles
+
 
         }
     },
@@ -14,10 +16,31 @@ export default {
         getImage(img) {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
+        // crea un array con oggetti con tag della selezione
+        getTagSelected(tag) {
+            this.selectedArray = [];
+            if (tag == 'all') {
+                this.selectedArray = store.articles
+                console.log(tag);
+            }
+            else {
+                console.log(tag);
+
+                store.articles.forEach((element, i) => {
+                    if (element.tags.includes(tag)) {
+                        this.selectedArray.push(element);
+                    }
+                });
+                console.log(this.selectedArray)
+
+            }
+            console.log(this.selectedArray)
+        },
     },
     mounted() {
         register(this); //per debuggare il componente da console
-    }
+    },
+
 }
 </script>
 
@@ -26,29 +49,37 @@ export default {
         <div class="d-flex justify-content-between py-3">
             <div class="text-uppercase fw-bold fs-4">lifestyle & stories</div>
             <div class="d-flex gap-3">
-                <div class="btn">all</div>
-                <div class="btn">lifestyle</div>
-                <div class="btn">stories</div>
+                <div class="btn" @click="getTagSelected('all')">all</div>
+                <div class="btn" @click="getTagSelected('lifestyle')">lifestyle</div>
+                <div class="btn" @click="getTagSelected('stories')">stories</div>
             </div>
         </div>
         <div id="contenitoreCard" class="container position-relative ">
 
+            <!-- card che cicla -->
             <div class="card" v-for="i in 4">
-                <img :src="getImage(store.articles[i - 1].img)" alt="" class="w-100 h-100">
+                <!-- immagine -->
+                <img :src="getImage(this.selectedArray[i - 1].img)" alt="" class="w-100 h-100">
+
+                <!-- tags -->
                 <div class="tagCont top-0 start-50 translate-middle-x">
-                    <a v-for="element in store.articles[i - 1].tags" class="tag bg-white rounded px-2 mt-2 text-capitalize">
+                    <!-- elemento tag che cicla sul numero di tag nell'oggetto -->
+                    <a v-for="element in this.selectedArray[i - 1].tags"
+                        class="tag bg-white rounded px-2 mt-2 text-capitalize">
                         {{ element }}</a>
                 </div>
-                <div class="info position-absolute mb-2 text-capitalize">
 
+                <!-- scheda informazioni autore data ...  -->
+                <div class="info position-absolute mb-2 text-capitalize">
                     <div class="d-flex align-content-baseline gap-2">
                         <font-awesome-icon icon="fa-solid fa-user" class="" />
-                        <div>{{ store.articles[i - 1].author }}</div>
+                        <div>{{ this.selectedArray[i - 1].author }}</div>
                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                        <div>{{ store.articles[i - 1].date }}</div>
+                        <div>{{ this.selectedArray[i - 1].date }}</div>
                     </div>
-                    <div class="fw-bold">{{ store.articles[i - 1].title }}</div>
+                    <div class="fw-bold">{{ this.selectedArray[i - 1].title }}</div>
                 </div>
+
             </div>
 
         </div>
@@ -59,18 +90,15 @@ export default {
 // importo variabili
 @use '../styles/partials/variables' as *;
 
-
 img {
     border-radius: 5px;
     filter: brightness(0.6);
     object-fit: cover;
-
 }
 
 img:hover {
     filter: brightness(0.7);
 }
-
 
 .btn {
     text-transform: uppercase;
@@ -156,5 +184,4 @@ img:hover {
     width: 15rem;
     color: $themeColorDark;
     font-size: 0.8rem;
-}
-</style>
+}</style>

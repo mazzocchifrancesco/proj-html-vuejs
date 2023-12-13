@@ -3,19 +3,19 @@ import { reactive } from 'vue'
 export const store = reactive({
     articles: [
         {
-            title: "traveling alone is awesome",
-            date: "December 13, 2023",
-            tags: ["stories", "travel"],
-            img: "travel-alone.webp",
-            author: "gianni",
-            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
-        },
-        {
             title: "the best success stories",
             date: "December 13, 2023",
             tags: ["culture", "stories"],
             img: "success-story.webp",
             author: "ugo",
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
+        },
+        {
+            title: "traveling alone is awesome",
+            date: "December 13, 2023",
+            tags: ["stories", "travel"],
+            img: "travel-alone.webp",
+            author: "gianni",
             text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {

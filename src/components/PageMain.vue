@@ -60,6 +60,7 @@ export default {
     },
     mounted() {
         register(this); //per debuggare il componente da console
+
     },
     components: {
         MainShowcase,
