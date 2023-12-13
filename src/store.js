@@ -124,5 +124,5 @@ export const store = reactive({
             name: "travel",
             img: "best-places.webp"
         },
-    ]
+    ],
 });
