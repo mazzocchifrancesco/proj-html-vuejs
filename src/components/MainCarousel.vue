@@ -29,9 +29,10 @@ export default {
         };
         return {
             store,
-            onSwiper,
+
             onSlideChange,
             modules: [Autoplay, Navigation],
+            swiper: null
         }
     },
     methods: {
@@ -46,7 +47,17 @@ export default {
             arrowR[1].classList.add("mainR");
             arrowL[1].classList.add("mainL");
 
-        }
+        },
+        onSwiper(instance) {
+            console.log("swiper avviato");
+            this.swiper = instance
+        },
+        swiperNext() {
+            this.swiper.slideNext()
+        },
+        swiperPrev() {
+            this.swiper.slidePrev()
+        },
     },
     mounted() {
         register(this); //per debuggare il componente da console
@@ -59,23 +70,33 @@ export default {
 
 <template>
     <div class="container">
-        <div>
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- titolo -->
             <div class="fs-4 fw-bold py-3 mt-3">FEATURED POSTS</div>
+
+            <!-- pulsanti navigazione custom -->
+            <div>
+                <!-- CHECK perché il v-if?  -->
+                <font-awesome-icon class="navArrow me-2" icon="fa-solid fa-angle-left" v-if="swiper"
+                    @click="swiperPrev()" />
+                <font-awesome-icon class="navArrow" icon="fa-solid fa-angle-right" v-if="swiper" @click="swiperNext()" />
+            </div>
         </div>
         <!-- contenitore slides -->
         <div id="carosello" class="bg-white">
             <!-- slides -->
-            <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :navigation="true" :loop="true" :autoplay="{
+            <swiper @swiper="onSwiper" :slidesPerView="3" :spaceBetween="30" :modules="modules" :loop="true" :autoplay="{
                 delay: 6000,
                 disableOnInteraction: false,
             }" class="mySwiper">
+                <!-- slides che ciclano -->
                 <swiper-slide v-for="articles in store.articles">
                     <div id="slide" class="rounded d-flex flex-column align-items-center position-relative pb-3">
                         <img class="w-100 rounded-top" :src="getImage(articles.img)" alt="">
                         <div class="text-capitalize fw-bold text-center px-2 mt-3">{{ articles.title }}</div>
                         <div class="testo">{{ articles.date }}</div>
                         <div class="testo text-center my-1 px-2">{{ articles.text }}</div>
-
+                        <!-- bottone read more -->
                         <div class="btn text-white mt-2">Read More</div>
                         <div class="tagCont top-0 start-50 translate-middle-x">
                             <div v-for="element in articles.tags" class=" tag bg-white rounded px-2 mt-2 text-capitalize">
@@ -88,6 +109,7 @@ export default {
             </swiper>
 
 
+
         </div>
     </div>
 </template>
@@ -98,6 +120,19 @@ export default {
 
 #carosello {
     background-color: $themeColorLightgrey;
+}
+
+.navArrow {
+    background-color: $themeColorDark;
+    color: white;
+    border-radius: 50%;
+    padding: 0.8rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.navArrow:hover {
+    background-color: $themeColorAccent;
 }
 
 #slide {
@@ -116,25 +151,6 @@ export default {
 </style>
 <style lang="scss">
 @use '../styles/partials/variables' as *;
-
-// TODO centrare frecce nel div 
-.mainR,
-.mainL {
-    color: $themeColorAccent;
-    background-color: white;
-    border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-    position: absolute;
-}
-
-.mainR::after,
-.mainL::after {
-    font-size: 0.7rem;
-    font-weight: 900;
-    text-shadow: 0px 1px, 1px 0px, 1px 1px;
-
-}
 
 .btn:hover {
     background-color: $themeColorDark !important;
