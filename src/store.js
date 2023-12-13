@@ -86,7 +86,7 @@ export const store = reactive({
             title: "the best time to have a meal",
             date: "December 13, 2023",
             tags: ["food"],
-            img: "visit-france.webp",
+            img: "meal2.jpg",
             author: "sertorio",
             text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },

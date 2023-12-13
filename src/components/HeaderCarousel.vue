@@ -39,7 +39,7 @@ export default {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
 
-        // aggiunge classe a frecce header carousel FIX 
+        // aggiunge classe a frecce header carousel  
         addArrowsClass() {
             let arrowR = document.getElementsByClassName("swiper-button-next");
             let arrowL = document.getElementsByClassName("swiper-button-prev");
@@ -51,7 +51,7 @@ export default {
     mounted() {
         register(this); //per debuggare il componente da console
 
-        //magica funzione per cambiare le frecce FIX
+        //magica funzione per cambiare le frecce 
         this.addArrowsClass();
     }
 }

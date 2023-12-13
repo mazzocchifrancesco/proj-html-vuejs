@@ -13,6 +13,8 @@ export default {
 
         return {
             store,
+            currentVideo: "https://www.youtube.com/embed/H5qupR6YQpQ",
+            play: 0
 
         }
     },
@@ -20,6 +22,13 @@ export default {
         getImage(img) {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
+        changeVideo(video) {
+            this.currentVideo = video;
+            if (this.play == 0) {
+                this.play = 1;
+            }
+            else { this.play = 0 }
+        }
     },
     mounted() {
         register(this); //per debuggare il componente da console
@@ -28,13 +37,13 @@ export default {
 </script>
 <template>
     <div class="d-flex container my-5">
-        <iframe width="840" height="550" src="https://www.youtube.com/embed/JWlKA9wmO64?si=Sjw4BN7KyPEUWCFm"
-            title="YouTube video player" frameborder="0"
+        <iframe width="840" height="550" :src="this.currentVideo + '?&autoplay=' + this.play" title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
 
         <!-- playlist container  -->
-        <div class="d-flex flex-column gap-2 overflow-y-auto">
+        <div id="playlist" class="d-flex flex-column gap-2 overflow-y-auto">
             <div id="videoHeader" class="d-flex p-3 text-white gap-3">
                 <font-awesome-icon icon="fa-solid fa-play" size="2xl" />
                 <div>
@@ -42,7 +51,9 @@ export default {
                     <div>{{ video.length }}/{{ video.length }}</div>
                 </div>
             </div>
-            <div v-for="video in video" class="">
+
+            <!-- videoCard -->
+            <div v-for="video in video" class="videoCard px-1" @click="this.changeVideo(video.link)">
                 <div class="d-flex gap-2">
                     <img :src="getImage(video.img)" alt="" class="rounded">
                     <div>{{ video.title }}</div>
@@ -70,5 +81,18 @@ hr {
 
 #videoHeader {
     background-color: $themeColorDark;
+}
+
+.videoCard {
+    cursor: pointer;
+}
+
+.videoCard:hover {
+    color: $themeColorAccent;
+}
+
+#playlist {
+    background-color: $themeColorLightgrey;
+    width: calc(100% - 840px);
 }
 </style>
