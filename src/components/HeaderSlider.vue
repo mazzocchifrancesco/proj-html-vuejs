@@ -59,14 +59,14 @@ export default {
 </script>
 
 <template>
-    <div id="contenitore" class="d-flex text-white align-items-center gap-2">
+    <div class="d-flex text-white align-items-center gap-2 flex-fill">
         <img :src="getImage(this.news[counter].img)" alt="">
         <div>{{ this.news[counter].time }}</div>
         <div class="text-uppercase">{{ this.news[counter].text }}</div>
     </div>
-    <div class="d-flex align-items-center">
-        <font-awesome-icon class="btn text-white" @click="prev(this.news)" :icon="['fas', 'angle-left']" />
-        <font-awesome-icon class="btn text-white" @click="next(this.news)" :icon="['fas', 'angle-right']" />
+    <div class="d-flex align-items-center me-5">
+        <font-awesome-icon id="left" class="btn text-white" @click="prev(this.news)" :icon="['fas', 'angle-left']" />
+        <font-awesome-icon id="right" class="btn text-white" @click="next(this.news)" :icon="['fas', 'angle-right']" />
     </div>
 </template>
 
@@ -79,9 +79,10 @@ img {
     aspect-ratio: 1;
 }
 
-#contenitore {
-    width: 40rem;
+.btn:hover {
+    color: $themeColorDark !important;
 }
+
 
 // ...qui eventuale SCSS di AppComponent
 </style>

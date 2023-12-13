@@ -5,7 +5,7 @@ export const store = reactive({
         {
             title: "traveling alone is awesome",
             date: "",
-            tags: ["1", "2"],
+            tags: ["stories", "travel"],
             img: "travel-alone.webp",
             author: "",
             text: ""
@@ -13,7 +13,7 @@ export const store = reactive({
         {
             title: "the best success stories",
             date: "",
-            tags: ["1", "2"],
+            tags: ["culture", "stories"],
             img: "success-story.webp",
             author: "",
             text: ""
@@ -21,7 +21,7 @@ export const store = reactive({
         {
             title: "place for a road trip",
             date: "",
-            tags: ["1", "2"],
+            tags: ["lifestyle", "stories", "travel"],
             img: "best-places.webp",
             author: "",
             text: ""
@@ -29,7 +29,7 @@ export const store = reactive({
         {
             title: "music the love of my life",
             date: "",
-            tags: ["1", "2"],
+            tags: ["culture", "lifestyle"],
             img: "music-love.webp",
             author: "",
             text: ""
@@ -37,7 +37,7 @@ export const store = reactive({
         {
             title: "fashion trend now a days",
             date: "",
-            tags: ["1", "2"],
+            tags: ["fashion", "lifestyle"],
             img: "anime-fashion.webp",
             author: "",
             text: ""
@@ -45,7 +45,7 @@ export const store = reactive({
         {
             title: "the best winter outfit",
             date: "",
-            tags: ["1", "2"],
+            tags: ["fashion"],
             img: "winter.webp",
             author: "",
             text: ""
@@ -53,7 +53,7 @@ export const store = reactive({
         {
             title: "beginner photographer's mistake",
             date: "",
-            tags: ["1", "2"],
+            tags: ["fashion"],
             img: "photographers-mistakes.webp",
             author: "",
             text: ""
@@ -61,7 +61,7 @@ export const store = reactive({
         {
             title: "live ideas you might be anime",
             date: "",
-            tags: ["1", "2"],
+            tags: ["culture", "stories"],
             img: "ideas-anime.webp",
             author: "",
             text: ""
@@ -69,8 +69,32 @@ export const store = reactive({
         {
             title: "reason to visit france",
             date: "",
-            tags: ["1", "2"],
+            tags: ["lifestyle", "travel"],
             img: "visit-france.webp",
+            author: "",
+            text: ""
+        },
+        {
+            title: "hygenic recipe to prepare rice",
+            date: "",
+            tags: ["food"],
+            img: "rice-ball.webp",
+            author: "",
+            text: ""
+        },
+        {
+            title: "the best time to have a meal",
+            date: "",
+            tags: ["food"],
+            img: "visit-france.webp",
+            author: "",
+            text: ""
+        },
+        {
+            title: "the beast healty food",
+            date: "",
+            tags: ["food"],
+            img: "healthy-foods.webp",
             author: "",
             text: ""
         }

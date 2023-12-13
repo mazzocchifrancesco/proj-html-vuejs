@@ -38,19 +38,32 @@ export default {
         getImage(img) {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
+
+        // aggiunge classe a frecce header carousel 
+        addArrowsClass() {
+            let arrowR = document.getElementsByClassName("swiper-button-next");
+            let arrowL = document.getElementsByClassName("swiper-button-prev");
+            arrowR[0].classList.add("headerR");
+            arrowL[0].classList.add("headerL");
+
+        }
     },
     mounted() {
         register(this); //per debuggare il componente da console
+
+        //magica funzione per cambiare le frecce
+        this.addArrowsClass();
     }
 }
 </script>
 
 <template>
     <div id="carosello" class="p-4">
-        <swiper :slidesPerView="4" :spaceBetween="30" :modules="modules" :navigation="true" :loop="true" :autoplay="{
-            delay: 6000,
-            disableOnInteraction: false,
-        }" class="mySwiper">
+        <swiper id="mySlider" :slidesPerView="4" :spaceBetween="30" :modules="modules" :navigation="true" :loop="true"
+            :autoplay="{
+                delay: 6000,
+                disableOnInteraction: false,
+            }" class="mySwiper">
             <swiper-slide v-for="articles in store.articles">
                 <div id="slide" class="rounded">
                     <img class="w-100 rounded-top" :src="getImage(articles.img)" alt="">
@@ -73,5 +86,33 @@ export default {
 
 #slide {
     background-color: white;
+}
+
+.swiper-button-next {
+    color: $themeColorAccent;
+}
+</style>
+
+<!-- CHECK per qualche strano motivo non funziona se scoped, approfondire -->
+
+<style lang="scss">
+@use '../styles/partials/variables' as *;
+
+// TODO centrare frecce nel div 
+.headerR,
+.headerL {
+    color: $themeColorAccent;
+    background-color: white;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+}
+
+.headerR::after,
+.headerL::after {
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px;
 }
 </style>

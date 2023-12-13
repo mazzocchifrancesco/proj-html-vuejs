@@ -105,6 +105,11 @@ export default {
     aspect-ratio: 1;
 }
 
+#iconContainer *:hover {
+    color: white;
+    background-color: $themeColorDark;
+}
+
 #logo {
     height: 4rem;
 }

@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container py-5">
         <div class="d-flex justify-content-between py-3">
             <div class="text-uppercase fw-bold fs-4">lifestyle & stories</div>
             <div class="d-flex gap-3">
