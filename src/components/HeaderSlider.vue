@@ -23,7 +23,6 @@ export default {
             else {
                 this.counter = 0;
             };
-            console.log(this.counter);
 
         },
         //manda indietro le slides
@@ -36,7 +35,6 @@ export default {
                 this.counter = array.length - 1;
 
             };
-            console.log(this.counter);
 
         },
         //recupera dinamicamente le immagini

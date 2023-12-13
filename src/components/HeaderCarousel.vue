@@ -39,7 +39,7 @@ export default {
             return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
         },
 
-        // aggiunge classe a frecce header carousel 
+        // aggiunge classe a frecce header carousel FIX 
         addArrowsClass() {
             let arrowR = document.getElementsByClassName("swiper-button-next");
             let arrowL = document.getElementsByClassName("swiper-button-prev");
@@ -51,7 +51,7 @@ export default {
     mounted() {
         register(this); //per debuggare il componente da console
 
-        //magica funzione per cambiare le frecce
+        //magica funzione per cambiare le frecce FIX
         this.addArrowsClass();
     }
 }
@@ -71,15 +71,14 @@ export default {
                         <div class="text-capitalize fw-bold ">{{ articles.title }}</div>
                         <div>{{ articles.date }}</div>
                     </div>
-                    <div class="position-absolute top-0 start-50 translate-middle-x d-flex gap-2">
-                        <div v-for="element in articles.tags" class="bg-white rounded px-2 mt-2 text-capitalize">
+                    <div class="tagCont top-0 start-50 translate-middle-x">
+                        <div v-for="element in articles.tags" class=" tag bg-white rounded px-2 mt-2 text-capitalize">
                             {{ element
                             }}</div>
                     </div>
                 </div>
             </swiper-slide>
         </swiper>
-
 
     </div>
 </template>

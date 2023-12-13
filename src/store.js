@@ -8,7 +8,7 @@ export const store = reactive({
             tags: ["stories", "travel"],
             img: "travel-alone.webp",
             author: "gianni",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "the best success stories",
@@ -16,7 +16,7 @@ export const store = reactive({
             tags: ["culture", "stories"],
             img: "success-story.webp",
             author: "ugo",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "place for a road trip",
@@ -24,7 +24,7 @@ export const store = reactive({
             tags: ["lifestyle", "stories", "travel"],
             img: "best-places.webp",
             author: "pippo",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "music the love of my life",
@@ -32,7 +32,7 @@ export const store = reactive({
             tags: ["culture", "lifestyle"],
             img: "music-love.webp",
             author: "gino",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "fashion trend now a days",
@@ -40,7 +40,7 @@ export const store = reactive({
             tags: ["fashion", "lifestyle"],
             img: "anime-fashion.webp",
             author: "jack",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "the best winter outfit",
@@ -48,7 +48,7 @@ export const store = reactive({
             tags: ["fashion"],
             img: "winter.webp",
             author: "john",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "beginner photographer's mistake",
@@ -56,7 +56,7 @@ export const store = reactive({
             tags: ["fashion"],
             img: "photographers-mistakes.webp",
             author: "al",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "live ideas you might be anime",
@@ -64,7 +64,7 @@ export const store = reactive({
             tags: ["culture", "stories"],
             img: "ideas-anime.webp",
             author: "pdor",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "reason to visit france",
@@ -72,7 +72,7 @@ export const store = reactive({
             tags: ["lifestyle", "travel"],
             img: "visit-france.webp",
             author: "furio",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "hygenic recipe to prepare rice",
@@ -80,7 +80,7 @@ export const store = reactive({
             tags: ["food"],
             img: "rice-ball.webp",
             author: "cesare",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "the best time to have a meal",
@@ -88,7 +88,7 @@ export const store = reactive({
             tags: ["food"],
             img: "visit-france.webp",
             author: "sertorio",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         },
         {
             title: "the beast healty food",
@@ -96,7 +96,7 @@ export const store = reactive({
             tags: ["food"],
             img: "healthy-foods.webp",
             author: "tullio",
-            text: ""
+            text: "Cantami, o Diva, del Pelìde Achille l'ira funesta che infiniti addusse lutti agli Achei"
         }
     ],
     tagList: [

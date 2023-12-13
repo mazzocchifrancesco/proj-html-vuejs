@@ -25,7 +25,12 @@ export default {
 }
 </script>
 <template>
-    <div id="ytPlayer"></div>
+    <div class="d-flex justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JWlKA9wmO64?si=Sjw4BN7KyPEUWCFm"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
 </template>
 <style scoped lang="scss">
 // importo variabili

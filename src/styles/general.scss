@@ -14,3 +14,19 @@ body {
     font-family: sans-serif;
     background-color: $themeColorLight;
 }
+
+.tagCont {
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    text-decoration: none;
+    color: $themeColorDark;
+    cursor: pointer;
+}
+
+.tag:hover {
+    color: $themeColorAccent;
+}

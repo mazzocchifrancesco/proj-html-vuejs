@@ -75,7 +75,8 @@ export default {
 }
 
 main {
-    background-color: $themeColorLightgrey ;
+    background-color: $themeColorLight ;
 }
 
-// ...qui eventuale SCSS di AppComponent</style>
+// ...qui eventuale SCSS di AppComponent
+</style>
