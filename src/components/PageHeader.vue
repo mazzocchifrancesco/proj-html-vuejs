@@ -103,6 +103,8 @@ export default {
     border-radius: 50%;
     padding: 0.5rem;
     aspect-ratio: 1;
+    cursor: pointer;
+
 }
 
 #iconContainer *:hover {

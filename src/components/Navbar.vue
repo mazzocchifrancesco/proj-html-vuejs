@@ -1,14 +1,34 @@
 
 <script>
+import { store } from "../store.js" //state management
+import register from "../debug" //per debuggare il componente da console
+
 export default {
     name: "PageHeader",
+
+    data() {
+
+        return {
+            store,
+        }
+    },
+    methods: {
+        getImage(img) {
+            return new URL(`../assets/imgs/assets/${img}`, import.meta.url).href
+        },
+    },
+    mounted() {
+        register(this); //per debuggare il componente da console
+    }
 }
 </script>
 <template>
     <nav>
         <div class="container d-flex justify-content-between align-items-center py-2">
-
-            <font-awesome-icon icon="fa-solid fa-bars" class="hover" size='xl' />
+            <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions"> <font-awesome-icon icon="fa-solid fa-bars" class="hover"
+                    size='xl' />
+            </button>
             <div class="d-flex gap-5 text-uppercase">
                 <div class="hover selected">
                     <font-awesome-icon icon="fa-solid fa-home" />
@@ -41,6 +61,41 @@ export default {
             </div>
             <font-awesome-icon class="hover" icon="fa-solid fa-magnifying-glass" size='xl' />
         </div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center ">
+                <img id="logo" src="../assets/imgs/assets/anime-logo-300x89.webp" alt="">
+                <p class="px-3 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis alias minus culpa
+                    aliquam maxime reiciendis rerum nulla, dolores hic voluptas.</p>
+                <div class="d-flex justify-content-between">
+                    <img class="rounded" v-for="i in 3" :src="getImage(store.articles[i - 1].img)" alt="">
+                </div>
+                <div class="d-flex">
+                    <font-awesome-icon icon="fa-solid fa-clock" />
+                    <div>Sun - Sat : 9:00 AM - 18:00 PM</div>
+                </div>
+
+                <div class="d-flex">
+                    <font-awesome-icon icon="fa-solid fa-envelope" />
+                    <div>contact@domain.com</div>
+                </div>
+                <div class="d-flex">
+                    <font-awesome-icon icon="fa-solid fa-phone" />
+                    <div>(+82) 8123 456 789</div>
+                </div>
+                <!-- contenitore icone -->
+                <div id="iconContainer" class="d-flex align-items-center gap-2">
+                    <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                    <font-awesome-icon icon="fa-brands fa-twitter" />
+                    <font-awesome-icon icon="fa-brands fa-instagram" />
+                    <font-awesome-icon icon="fa-brands fa-youtube" />
+                </div>
+            </div>
+        </div>
     </nav>
 </template>
 <style scoped lang="scss">
@@ -58,5 +113,30 @@ nav {
 
 .hover:hover {
     color: $themeColorAccent;
+}
+
+#logo {
+    width: 60%;
+}
+
+img {
+    width: 30%;
+}
+
+.offcanvas {
+    width: 500px !important;
+}
+
+#iconContainer * {
+    color: white;
+    background-color: $themeColorAccent;
+    border-radius: 50%;
+    padding: 0.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+#iconContainer *:hover {
+    background-color: $themeColorDark;
 }
 </style>
