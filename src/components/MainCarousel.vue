@@ -49,7 +49,6 @@ export default {
 
         },
         onSwiper(instance) {
-            console.log("swiper avviato");
             this.swiper = instance
         },
         swiperNext() {
@@ -61,9 +60,6 @@ export default {
     },
     mounted() {
         register(this); //per debuggare il componente da console
-
-        //magica funzione per cambiare le frecce FIX
-        this.addArrowsClass();
     }
 }
 </script>

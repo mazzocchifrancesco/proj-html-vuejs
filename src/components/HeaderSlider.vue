@@ -57,10 +57,10 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex text-white align-items-center gap-2 flex-fill">
+    <div class="d-flex text-white align-items-center gap-2 flex-fill fw-semibold">
         <img :src="getImage(this.news[counter].img)" alt="">
-        <div>{{ this.news[counter].time }}</div>
-        <div class="text-uppercase">{{ this.news[counter].text }}</div>
+        <div class="">{{ this.news[counter].time }}</div>
+        <div class="text-uppercase news ">{{ this.news[counter].text }}</div>
     </div>
     <div class="d-flex align-items-center me-5">
         <font-awesome-icon id="left" class="btn text-white" @click="prev(this.news)" :icon="['fas', 'angle-left']" />
@@ -82,6 +82,7 @@ img {
     background-color: $themeColorAccent !important;
 }
 
-
-// ...qui eventuale SCSS di AppComponent
+.news:hover {
+    color: $themeColorDark;
+}
 </style>

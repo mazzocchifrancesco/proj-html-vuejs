@@ -115,10 +115,17 @@ export default {
     width: 2rem;
 }
 
+.headerR:hover,
+.headerL:hover {
+    background-color: $themeColorAccent;
+    color: white;
+}
+
 .headerR::after,
 .headerL::after {
     font-size: 0.7rem;
     font-weight: 900;
     text-shadow: 0px 1px, 1px 0px, 1px 1px;
+
 }
 </style>

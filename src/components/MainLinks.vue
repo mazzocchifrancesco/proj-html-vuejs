@@ -53,7 +53,7 @@ export default {
             <div class="text-uppercase fw-bold fs-4">lifestyle & stories</div>
             <!-- bottoni -->
             <div class="d-flex gap-3">
-                <!-- TODO bottone rimanse selezionato -->
+                <!-- TODO bottone rimane selezionato -->
                 <div class="btn" @click="getTagSelected('all')">all</div>
                 <div class="btn" @click="getTagSelected('lifestyle')">lifestyle</div>
                 <div class="btn" @click="getTagSelected('stories')">stories</div>
@@ -77,13 +77,13 @@ export default {
 
                 <!-- scheda informazioni autore data ...  -->
                 <div class="info position-absolute mb-2 text-capitalize">
-                    <div class="d-flex align-content-baseline gap-2">
+                    <div class="  d-flex align-content-baseline gap-2">
                         <font-awesome-icon icon="fa-solid fa-user" class="" />
-                        <div class="mb-2">{{ this.selectedArray[i - 1].author }}</div>
+                        <div class=" textInfo mb-2">{{ this.selectedArray[i - 1].author }}</div>
                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                        <div>{{ this.selectedArray[i - 1].date }}</div>
+                        <div class=" textInfo ">{{ this.selectedArray[i - 1].date }}</div>
                     </div>
-                    <div class="fw-bold">{{ this.selectedArray[i - 1].title }}</div>
+                    <div class="fw-bold textInfo">{{ this.selectedArray[i - 1].title }}</div>
                 </div>
 
             </div>
@@ -102,8 +102,17 @@ img {
     object-fit: cover;
 }
 
+.textInfo {
+    font-weight: 600;
+    cursor: pointer;
+}
+
 img:hover {
     filter: brightness(0.7);
+}
+
+.textInfo:hover {
+    color: $themeColorAccent;
 }
 
 .btn {

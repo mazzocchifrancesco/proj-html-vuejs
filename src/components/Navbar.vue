@@ -5,6 +5,8 @@ import register from "../debug" //per debuggare il componente da console
 
 export default {
     name: "PageHeader",
+    components: {
+    },
 
     data() {
 

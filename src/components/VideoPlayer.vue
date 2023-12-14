@@ -54,7 +54,9 @@ export default {
 
             <!-- videoCard -->
             <div v-for="video in video" class="videoCard px-1" @click="this.changeVideo(video.link)">
-                <div class="d-flex gap-2">
+                <div class="d-flex gap-2 align-items-center">
+                    <!-- TODO cambia icona video in riproduzione -->
+                    <font-awesome-icon icon="fa-solid fa-circle-pause" size="xl" />
                     <img :src="getImage(video.img)" alt="" class="rounded">
                     <div>{{ video.title }}</div>
                 </div>
